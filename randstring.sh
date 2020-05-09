@@ -60,6 +60,7 @@ else
   exit 1
 fi 
 
-LC_ALL=C tr -dc "$CHARACTER_SET" < "$SOURCE" | head -c "$LENGTH"
+
+(set +o pipefail; LC_ALL=C tr -dc "$CHARACTER_SET" < "$SOURCE" | head -c "$LENGTH")
 printf '\n'
 
